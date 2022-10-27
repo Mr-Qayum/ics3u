@@ -1,0 +1,22 @@
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: yellow;
+  width: 800px;
+  height: 200px;
+  border: 2px solid red;
+}
+
+.parent .box {
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+}
+
+.parent .box p {
+  text-align: center;
+}
