@@ -1,0 +1,72 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  /* grid-template-areas: 
+  "header header header header header header header header header header"
+  "large-box-1 large-box-1 large-box-1 large-box-1 large-box-1 large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "large-box-1 large-box-1 large-box-1 large-box-1 large-box-1 large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "large-box-1 large-box-1 large-box-1 large-box-1 large-box-1 large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "large-box-1 large-box-1 large-box-1 large-box-1 large-box-1 large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "summary summary summary summary summary large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "summary summary summary summary summary large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "summary summary summary summary summary large-box-2 large-box-2 large-box-2 large-box-2 large-box-2"
+  "footer footer footer footer footer footer footer footer footer footer"
+  "footer footer footer footer footer footer footer footer footer footer"; */
+  background-color:yellow;
+  width: 100%;
+  aspect-ratio: 1 / 2;
+  gap: 5%;
+}
+
+.parent > .box {
+  background-color: purple;
+  border: white 1px solid;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.parent > .box > .box2 {
+  background-color: black;
+  border: white 1px solid;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.parent > .header {
+  /* grid-area: header; */
+  grid-column: span 10;
+}
+
+.parent > .large-box-1 {
+  grid-area: large-box-1;
+  grid-column: span 5;
+  grid-row: span 4;
+}
+
+.parent > .large-box-2 {
+  grid-area: large-box-2;
+  grid-column: span 5;
+  grid-row: span 4;
+}
+
+.parent > .summary {
+  grid-area: summary;
+  grid-column: span 10;
+  grid-row: span 3;
+}
+
+.parent > .footer {
+  grid-area: footer;
+  grid-column: span 10;
+  grid-row: span 2;
+}
