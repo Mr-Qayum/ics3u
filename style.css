@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+}
+
+p {
+  color: yellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+img {
+  width: 200px;
+  aspect-ratio: 2 / 3;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 300px;
+}
