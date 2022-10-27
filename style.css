@@ -1,0 +1,15 @@
+body {
+  background-color: pink;
+}
+
+h1 {
+  color:green;
+  background-color: yellow;
+  border: 2px solid red;
+  width: 500px;
+  height: 300px;
+  margin-top: 50px;
+  margin-right: 100px;
+  margin-bottom: 200px;
+  margin-left: 250px;
+}
