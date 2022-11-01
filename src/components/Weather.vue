@@ -1,16 +1,17 @@
 <script setup>
 import axios from "axios";
 
-const response = (await axios.get("https://api.open-meteo.com/v1/forecast", {
-  params: {
-    latitude: 43.6532,
-    longitude: 79.3832,
-    current_weather: true,
-  }
-})).data;
+const response = (
+  await axios.get("https://api.open-meteo.com/v1/forecast", {
+    params: {
+      latitude: 43.6532,
+      longitude: 79.3832,
+      current_weather: true,
+    },
+  })
+).data;
 let code = "";
 
-console.log(response.current_weather.weathercode);
 switch (response.current_weather.weathercode) {
   case 0:
     code = "Clear sky";
@@ -22,9 +23,9 @@ switch (response.current_weather.weathercode) {
     break;
   case 45:
   case 48:
-    code = "Fog and depositing rime fog"
+    code = "Fog and depositing rime fog";
     break;
-};
+}
 </script>
 
 <template>
@@ -43,7 +44,7 @@ switch (response.current_weather.weathercode) {
 <style scoped>
 div p {
   color: blueviolet;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 2rem;
   text-align: center;
 }

@@ -1,6 +1,7 @@
 <script setup>
 import Date from './components/Date.vue'
 import Weather from './components/Weather.vue'
+import Calculator from './components/Calculator.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import Weather from './components/Weather.vue'
     <Suspense>
       <Weather />
     </Suspense>
+    <Calculator />
   </div>
 </template>
 
