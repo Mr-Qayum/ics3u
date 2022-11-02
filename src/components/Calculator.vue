@@ -40,21 +40,13 @@ const getResult = () => {
 
 <template>
   <div class="calculator-container">
-    <p class="result">{{ result }}</p>
-    <button @click="addOperand(1)">1</button>
-    <button @click="addOperand(2)">2</button>
-    <button @click="addOperand(3)">3</button>
-    <button @click="addOperand(4)">4</button>
-    <button @click="addOperand(5)">5</button>
-    <button @click="addOperand(6)">6</button>
-    <button @click="addOperand(7)">7</button>
-    <button @click="addOperand(8)">8</button>
-    <button @click="addOperand(9)">9</button>
-    <button @click="addOperand(0)">0</button>
-    <button @click="addOperator('+')">+</button>
-    <button @click="addOperator('-')">-</button>
-    <button @click="addOperator('/')">/</button>
-    <button @click="addOperator('*')">*</button>
+    <label class="result">{{ result }}</label>
+    <button v-for="value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]" @click="addOperand(value)">
+      {{ value }}
+    </button>
+    <button v-for="operator in ['+', '-', '/', '*']" @click="addOperator(operator)">
+      {{ operator }}
+    </button>
     <button @click="getResult()">=</button>
   </div>
 </template>
@@ -63,6 +55,7 @@ const getResult = () => {
 .calculator-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  width: 75%;
   color: white;
 }
 
@@ -73,5 +66,13 @@ const getResult = () => {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: bold;
   color: purple;
+}
+
+button {
+  background-color: grey;
+  color: purple;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 0.75rem;
 }
 </style>

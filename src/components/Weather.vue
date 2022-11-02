@@ -29,8 +29,7 @@ switch (response.current_weather.weathercode) {
 </script>
 
 <template>
-  <div>
-    <img />
+  <div class="weather-container">
     <p>City: Toronto</p>
     <p>Lat: {{ response.latitude }}</p>
     <p>Long: {{ response.longitude }}</p>
@@ -45,7 +44,7 @@ switch (response.current_weather.weathercode) {
 div p {
   color: blueviolet;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 </style>
