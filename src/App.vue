@@ -21,5 +21,7 @@ import Register from "./components/Register.vue";
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: black;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
