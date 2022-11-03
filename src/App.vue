@@ -1,27 +1,20 @@
-<script setup>
-import Date from "./components/Date.vue";
-import Weather from "./components/Weather.vue";
-import Calculator from "./components/Calculator.vue";
-import Register from "./components/Register.vue";
-</script>
+<script setup></script>
 
 <template>
   <div class="app-container">
-    <Date />
-    <Suspense>
-      <Weather />
-    </Suspense>
-    <Calculator />
-    <Register />
+    <RouterView />
   </div>
 </template>
 
 <style scoped>
-.app-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: purple;
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 </style>

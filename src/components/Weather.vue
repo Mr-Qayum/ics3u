@@ -42,8 +42,6 @@ switch (response.current_weather.weathercode) {
 
 <style scoped>
 div p {
-  color: blueviolet;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 1.5rem;
   text-align: center;
 }

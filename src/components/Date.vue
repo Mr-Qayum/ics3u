@@ -21,8 +21,6 @@ setInterval(() => {
 
 <style scoped>
 div p {
-  color: blueviolet;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   text-align: center;
 }
