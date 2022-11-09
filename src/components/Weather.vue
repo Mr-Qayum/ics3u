@@ -1,11 +1,12 @@
 <script setup>
 import axios from "axios";
 
+const props = defineProps(["city", "latitude", "longitude"]);
 const response = (
   await axios.get("https://api.open-meteo.com/v1/forecast", {
     params: {
-      latitude: 43.6532,
-      longitude: 79.3832,
+      latitude: props.latitude,
+      longitude: props.longitude,
       current_weather: true,
     },
   })
@@ -30,7 +31,7 @@ switch (response.current_weather.weathercode) {
 
 <template>
   <div class="weather-container">
-    <p>City: Toronto</p>
+    <p>City: {{ props.city }}</p>
     <p>Lat: {{ response.latitude }}</p>
     <p>Long: {{ response.longitude }}</p>
     <p>Temperature: {{ response.current_weather.temperature }}</p>

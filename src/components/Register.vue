@@ -17,7 +17,7 @@ const submitEvent = () => {
       <br />
       <input type="email" placeholder="Email" v-model="email" required />
       <br />
-      <input type="submit" value="Register" />
+      <slot />
     </form>
     <div v-if="showData">
       <p>You submitted:</p>
