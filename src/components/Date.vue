@@ -1,5 +1,9 @@
 <script setup>
 import { ref } from "vue";
+import { useStore } from "../store/index.js";
+
+const store = useStore();
+
 let date = ref(0);
 let time = ref(0);
 
@@ -16,12 +20,14 @@ setInterval(() => {
   <div class="date-container">
     <p>{{ date }}</p>
     <p>{{ time }}</p>
+    <p>{{ store.city }}</p>
+    <p>{{ store.count }}</p>
   </div>
 </template>
 
 <style scoped>
 div p {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 </style>

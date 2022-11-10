@@ -1,5 +1,8 @@
 <script setup>
 import axios from "axios";
+import { useStore } from "../store/index.js";
+
+const store = useStore();
 
 const response = (
   await axios.get("https://api.open-meteo.com/v1/forecast", {
@@ -11,6 +14,11 @@ const response = (
   })
 ).data;
 let code = "";
+
+const changeCity = () => {
+  store.city = "Vancouver";
+  store.increment();
+};
 
 switch (response.current_weather.weathercode) {
   case 0:
@@ -30,13 +38,14 @@ switch (response.current_weather.weathercode) {
 
 <template>
   <div class="weather-container">
-    <p>City: Toronto</p>
+    <p>City: {{ store.city }}</p>
     <p>Lat: {{ response.latitude }}</p>
     <p>Long: {{ response.longitude }}</p>
     <p>Temperature: {{ response.current_weather.temperature }}</p>
     <p>Windspeed: {{ response.current_weather.windspeed }}</p>
     <p>Wind Direction: {{ response.current_weather.winddirection }}</p>
     <p>Code: {{ code }}</p>
+    <button @click="changeCity()">Change</button>
   </div>
 </template>
 
