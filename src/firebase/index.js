@@ -12,14 +12,14 @@ const firebaseConfig = {
   appId: "1:580501545880:web:665528fb964e4d8b5ec1ed"
 };
 
+const app = initializeApp(firebaseConfig);
+
 const auth = getAuth();
 const firestore = getFirestore();
 const storage = getStorage();
 
-connectAuthEmulator(auth, "http://localhost:9099");
-connectFirestoreEmulator(firestore, 'localhost', 8080);
-connectStorageEmulator(storage, "localhost", 9199);
-
-const app = initializeApp(firebaseConfig);
+//connectAuthEmulator(auth, "http://localhost:9099");
+//connectFirestoreEmulator(firestore, 'localhost', 8080);
+//connectStorageEmulator(storage, "localhost", 9199);
 
 export { auth, firestore, storage }

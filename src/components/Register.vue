@@ -1,22 +1,24 @@
 <script setup>
 import { ref } from "vue";
+import { auth } from "../firebase/index.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const name = ref("");
 const email = ref("");
+const password = ref("");
 const showData = ref(false);
 
-const submitEvent = () => {
-  showData.value = true;
+const register = () => {
+  createUserWithEmailAndPassword(auth, email.value, password.value);
 };
 </script>
 
 <template>
   <div class="register-container">
-    <form @submit.prevent="submitEvent()">
+    <form @submit.prevent="register()">
       <input type="text" placeholder="Name" v-model="name" required />
-      <br />
       <input type="email" placeholder="Email" v-model="email" required />
-      <br />
+      <input type="password" placeholder="Password" v-model="password" required />
       <input type="submit" value="Register" />
     </form>
     <div v-if="showData">
@@ -30,6 +32,12 @@ const submitEvent = () => {
 <style scoped>
 .register-container {
   color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 input {
