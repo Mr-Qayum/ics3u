@@ -1,11 +1,10 @@
 <script setup>
+
 </script>
 
 <template>
   <div>
-    <Suspense>
-      <RouterView />
-    </Suspense>
+    <h1>Footer</h1>
   </div>
 </template>
 
