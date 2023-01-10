@@ -1,16 +1,18 @@
 <script setup>
 import axios from "axios";
-import { useStore } from "../store/index.js"
+import { useStore } from "../store/index.js";
 
 const store = useStore();
 const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
-let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
-  params: {
-    api_key: "ad891932e4907c23fc8a99002a4b5d3f",
-  }
-})).data;
+let data = (
+  await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
+    params: {
+      api_key: "ad891932e4907c23fc8a99002a4b5d3f",
+    },
+  })
+).data;
 </script>
 
 <template>
@@ -19,11 +21,18 @@ let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ data.title }}</h1>
-        <button @click="store.addToCart(props.id, {
-          id: data.id,
-          poster: data.poster_path,
-          title: data.title
-        })">Purchase</button>
+        <button
+          @click="
+            store.addToCart(props.id, {
+              id: data.id,
+              poster: data.poster_path,
+              title: data.title,
+              date: data.release_date,
+            })
+          "
+        >
+          Purchase
+        </button>
       </div>
     </div>
   </Teleport>
@@ -44,7 +53,7 @@ let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
 }
 
 .modal-outer-container .modal-inner-container {
-  background-color: #1F2123;
+  background-color: #1f2123;
   color: white;
   width: clamp(280px, 100%, 800px);
   height: 400px;
@@ -56,7 +65,7 @@ let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
   right: 0px;
   padding: 1rem;
   border: none;
-  background: #1F2123;
+  background: #1f2123;
   font-weight: bold;
   font-size: 1.25rem;
   color: white;

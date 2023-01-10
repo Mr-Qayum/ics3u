@@ -12,7 +12,7 @@ export const useStore = defineStore('store', {
     async getMovies(id) {
       let data = (await axios.get("https://api.themoviedb.org/3/discover/movie", {
         params: {
-          api_key: "Your Key",
+          api_key: "ad891932e4907c23fc8a99002a4b5d3f",
           with_genres: id,
           include_adult: false,
         }
@@ -27,7 +27,9 @@ export const useStore = defineStore('store', {
     },
     addToCart(id, data) {
       this.cart.set(id, data);
-      console.log(this.cart);
+    },
+    removeFromCart(id) {
+      this.cart.delete(id);
     }
   }
 });
