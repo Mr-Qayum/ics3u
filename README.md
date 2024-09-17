@@ -21,7 +21,7 @@
 **Vite** - https://vitejs.dev/  
 **Vue** - https://vuejs.org/  
 **Vue Router** - https://router.vuejs.org/guide/  
-**Firebae** - https://firebase.google.com/docs/reference/js
+**Firebase** - https://firebase.google.com/docs/reference/js
 
 # Tools:  
 **CSS Battle** - https://cssbattle.dev/  
