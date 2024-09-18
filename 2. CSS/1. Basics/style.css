@@ -1,0 +1,88 @@
+/* External Styling */
+
+/* Selecting an element */
+h2 {
+    text-decoration: underline;
+    color: green;
+    padding: 20px;
+}
+
+/* Selecting a class */
+.test-1 {
+    font-size: 40px;
+}
+
+/* Selecting an ID */
+#test-2 {
+    text-decoration: overline;
+}
+
+/* Box model example */
+.box-model {
+    padding: 40px;
+    border-width: 2px;
+    border-style: dotted;
+    margin: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Rule for selecting two classes using AND logic */
+.bonus.discount {
+    background-color: yellow;
+}
+
+/* Rule for selecting two classes using OR logic */
+.sale,
+.clearance {
+    text-decoration: line-through;
+}
+
+/* Combinators */
+
+/* Rule for selecting descendants */
+ul li p {
+    color: red;
+}
+
+/* Rule for selecting children */
+.child > p {
+    color: red;
+}
+
+/* Rule for selecting adjacent siblings */
+.sibling section + p {
+    color: red;
+}
+
+/* Rule for selecting general siblings */
+.general-sibling p ~ p {
+    color: red;
+}
+
+/* Pseudo-classes */
+
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+/* select the 3rd child of the ul element */
+ul li:nth-child(3) {
+    color: yellow;
+}
