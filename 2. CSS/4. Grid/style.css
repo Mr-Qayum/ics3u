@@ -1,0 +1,56 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+}
+
+.main {
+    background-color: pink;
+    display: grid;
+    /* grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr); */
+    grid-template-areas: 
+    "a a a a"
+    "b b c c"
+    "d d e e";
+} 
+
+.a {
+    grid-area: a;
+    background-color: red;
+}
+
+.b {
+    grid-area: b;
+    background-color: green;
+}
+
+.c {
+    grid-area: c;
+    background-color: blue;
+}
+
+.d {
+    grid-area: d;
+    background-color: violet;
+}
+
+.e {
+    grid-area: e;
+    background-color: orange;
+}
+
+/* Media query: this rule will only apply when the device screen is >= 1000px wide */
+@media (min-width: 1000px) {
+    .main {
+        grid-template-areas: 
+        "a a a a"
+        "b b c c"
+        "d d d d"
+        "e e e e";
+    } 
+}
