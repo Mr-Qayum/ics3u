@@ -59,3 +59,43 @@ x %= 5;
 x = x + 1; // don't do this!
 x += 1; // better but not good enough
 x++; // Perfect!
+
+// BOOLEAN OPERATORS
+// 1. Boolean operators should only be used in expressions that should result in true or false
+// 2. They can work with just about any type, if used correctly
+// 3. It is important to note that JavaScript has "truthy" and "falsy" values
+
+let a = 6;
+let b = 10;
+let c = true;
+let d = false;
+a > b; // checks if a is greater than b
+a < b; // checks if a is less than b
+a >= b; // checks if a is greater than or equal to b
+a <= b; // checks if a is less then or equal to b
+a == b; // checks if a is equal to b; if types are different JavaScript will coerce the variables
+a === b; // checks if a is equal to be and of the same type; no coercion
+c & d; // checks c AND d
+c && d; // checks c AND d, but uses short-circuit logic (i.e. if c is false, d is not checked)
+c | d; // checks c OR d
+c || d; // checks c OR d, but uses short-circuit logic (i.e. if c is true, d is not checked)
+
+// FUNCTIONS
+// 1. Functions are blocks of code that are executed upon invocation
+// 2. They can take parameters/arguments, if necessary
+// 3. They can only return a single value, if necessary
+// 4. They can be written using the "function" keyword or with arrow syntax "=>"
+
+// A Pythagorean Theorem function that takes two arguments and returns a value
+function pythagoreanTheorem1(a, b) {
+    return Math.sqrt(a * a + b * b);
+}
+
+// The same function as above using arrow syntax
+const pythagoreanTheorem2 = (a, b) => {
+    return Math.sqrt(a * a + b * b);
+}
+
+// Executing/calling the above functions and storing their results in variables
+const c1 = pythagoreanTheorem1(2, 1);
+const c2 = pythagoreanTheorem2(2, 1);
