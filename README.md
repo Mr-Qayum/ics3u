@@ -3,11 +3,6 @@
 **Node JS** - https://nodejs.org/en/  
 **Git** - https://git-scm.com/downloads  
 
-# Cheatsheets:  
-**Emmet** - https://docs.emmet.io/cheatsheet-a5.pdf  
-**CSS** - https://classroom.google.com/c/NDk4NjI0MTkzODM1  
-**Git** - https://classroom.google.com/c/NDk4NjI0MTkzODM1  
-
 # Tutorials:  
 **HTML/CSS/JavaScript** - https://www.w3schools.com/  
 **CSS Box Model** - https://www.w3schools.com/css/css_boxmodel.asp  
