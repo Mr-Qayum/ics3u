@@ -137,3 +137,46 @@ array1.pop(); // removes the last value in the array and returns it
 array1.push(10); // adds 10 to the end of the array
 array1.shift(); // removes the first value in the array and returns it
 array1.unshift(10); // adds 10 to the front of the array
+
+// OBJECTS
+// 1. Objects can store key and values as pairs
+// 2. Keys can be accessed using the "." operator or array-like syntax (e.g. objectName["keyName"])
+// 3. They can use the spread operator and be destructured
+// 4. They also have useful built-in functions like keys, values, entries and freeze
+
+// creates an object with specified key value pairs
+const object1 = {
+  name: "Bill Gates",
+  age: 71,
+  company: "Microsoft",
+  role: "CEO",
+  isEvil: true,
+  cars: ["BMW", "Ferrari", "Audi"],
+};
+
+// creates another object with specified key value pairs
+const object2 = {
+  address: "99 Rich Blvd.",
+  hair: "white",
+}
+
+// spreads the contents of object1 and object2 into a new object
+const object3 = {
+  ...object1,
+  ...object2,
+}
+
+// destructures the specified keys into variables called hair, role and cars, respectively
+const { hair, role, cars } = object3;
+
+object1.age; // gets the value of the age key
+object1.name = "Steve Jobs" // changes the value of the name key to "Steve Jobs"
+delete object1.name; // deletes the name key/value pair from the object
+object1["age"] // also gets the value of the age key using array-like syntax
+object1["name"] = "Steve Jobs" // also changes the value of the name key to "Steve Jobs"
+delete object1["name"] // also deletes the name key/value pair from the object
+
+Object.keys(object1); // returns all the keys inside the object
+Object.values(object1); // returns all the values inside the object
+Object.entries(object1); // returns all the key/value pairs inside the object
+Object.freeze(object1); // freezes the objects values from being changed
