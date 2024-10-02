@@ -180,3 +180,56 @@ Object.keys(object1); // returns all the keys inside the object
 Object.values(object1); // returns all the values inside the object
 Object.entries(object1); // returns all the key/value pairs inside the object
 Object.freeze(object1); // freezes the objects values from being changed
+
+// CONDITIONAL STATEMENTS
+// 1. Conditional statements allow code to execute, or not execute, when one or more conditions are met
+// 2. The condition(s) should evaluate to a boolean value
+
+const age = 18;
+const citizen = true;
+const height = 149;
+const foods = ["hamburgers", "pizzas", "meatballs", "hot dogs"]
+
+// the if-else statement is used for binary situations
+if (age >= 18 && citizen && height >= 150) {
+  console.log("You can vote!");
+} else {
+  console.log("You can not vote!");
+}
+
+// the ternary operator is preferred to the else-if whenever possible
+//     if (age % 2 == 0) {
+//       age *= 2;
+//     } else {
+//       age /= 2;
+//     }
+const age2 = age % 2 == 0 ? age * 2 : age / 2; // if age is even, multiply it by 2, otherwise, divide it by 2
+
+// the else-if statement is used for non-binary situations
+if (age < 18) {
+  console.log("You don't know what you are doing!");
+} else if (!citizen) {
+  console.log("You don't live here!");
+} else if (height < 150) {
+  console.log("You need to drink milk!")
+} else {
+  console.log("You can vote!");
+}
+
+// the switch statement is preferred to the else-if statement when conditions have fixed values; it works with strings, numbers, decimals and many others
+switch (foods[3]) {
+  case "hamburgers":
+    console.log("I love burgers!");
+    break;
+  case "pizzas":
+    console.log("I love pinapple pizza!");
+    break;
+  case "meatballs":
+    console.log("I love beef!");
+    break;
+  case "hot dogs":
+    console.log("I love animals too much!");
+    break;
+  default:
+    console.log("Invalid food!");
+}
