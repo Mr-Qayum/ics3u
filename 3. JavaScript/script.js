@@ -233,3 +233,44 @@ switch (foods[3]) {
   default:
     console.log("Invalid food!");
 }
+
+// LOOP STATEMENTS
+// 1. Loops statements allow blocks of code to execute multiple times (iterate), until some condition is met
+// 2. Loops should always modify their condition within their code block, otherwise an infinite loop will occur
+
+let loop = 10;
+
+// loops until the value of loop reaches 0; it checks the condition before first execution
+while (loop > 0) {
+  loop--;
+}
+
+// loops until the value of loop reaches 0,; it checks the condition after first execution
+do {
+  loop--;
+} while (loop > 0);
+
+// loops a finite number of times; the counter (i) starts at 4, increases by 2 each time and then stops when it reaches 10
+for (let i = 4; i < 10; i += 2) {
+  console.log(i);
+}
+
+// loops through the entire foods array
+for (let i = 0; i < foods.length; i++) {
+  console.log(foods[i]);
+}
+
+// a better way to loop through an array; use the for-of with arrays only
+for (const food of foods) {
+  console.log(food);
+}
+
+// another way to loop through an array using the array's built-in forEach function
+foods.forEach((food, index) => {
+  console.log(`At index=${index}, we have ${food}`);
+})
+
+// use the for-in with objects only
+for (const item in object1) {
+  console.log(`${item} has ${object1[item]}`);
+}
