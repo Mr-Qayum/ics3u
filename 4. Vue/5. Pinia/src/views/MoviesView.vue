@@ -10,6 +10,7 @@ const router = useRouter();
   <div class="movie-gallery">
     <header class="header">
       <h1>{{ `Hello ${store.email}!` }}</h1>
+      <button @click="router.push(`/cart`)" class="logout-button">Cart</button>
       <button @click="router.push(`/`)" class="logout-button">Logout</button>
     </header>
     <main class="movie-container">

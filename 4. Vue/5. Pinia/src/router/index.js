@@ -5,12 +5,13 @@ import LoginView from '../views/LoginView.vue';
 import MoviesView from '../views/MoviesView.vue';
 import AllMoviesView from '../views/AllMoviesView.vue';
 import SingleMovieView from '../views/SingleMovieView.vue';
-
+import CartView from '../views/CartView.vue';
 
 const routes = [
     { path: '/', component: HomeView },
     { path: '/register', component: RegisterView },
     { path: '/login', component: LoginView },
+    { path: '/cart', component: CartView },
     {
         path: '/movies',
         component: MoviesView,

@@ -1,18 +1,24 @@
 <script setup>
 import axios from "axios";
 import { useRoute } from "vue-router";
+import { useStore } from "../store";
 
 const route = useRoute();
+const store = useStore();
+
 const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
-console.log(response.data);
 </script>
 
 <template>
   <div class="movie-detail">
+    <button
+      @click="store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })"
+      class="movie-site">
+      Buy
+    </button>
     <h1 class="movie-title">{{ response.data.original_title }}</h1>
     <p class="movie-overview">{{ response.data.overview }}</p>
     <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
-    <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
     <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster" class="movie-poster" />
 
     <h2 class="trailers-title">Trailers</h2>
@@ -31,13 +37,15 @@ console.log(response.data);
 .movie-detail {
   padding: 20px;
   color: white;
-  background-color: #141414; /* Dark background for the detail view */
+  background-color: #141414;
+  /* Dark background for the detail view */
 }
 
 .movie-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #e50914; /* Netflix red */
+  color: #e50914;
+  /* Netflix red */
 }
 
 .movie-overview {
@@ -54,14 +62,16 @@ console.log(response.data);
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 15px;
-  background-color: #e50914; /* Netflix red */
+  background-color: #e50914;
+  /* Netflix red */
   color: white;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .movie-site:hover {
-  background-color: #f01212; /* Darker red on hover */
+  background-color: #f01212;
+  /* Darker red on hover */
 }
 
 .movie-poster {
@@ -81,7 +91,8 @@ console.log(response.data);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px; /* Space between trailer tiles */
+  gap: 15px;
+  /* Space between trailer tiles */
 }
 
 .trailer-tile {
@@ -89,15 +100,19 @@ console.log(response.data);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s;
-  width: 200px; /* Fixed width for trailer tiles */
+  width: 200px;
+  /* Fixed width for trailer tiles */
 }
 
 .trailer-tile:hover {
-  transform: scale(1.05); /* Scale effect on hover */
+  transform: scale(1.05);
+  /* Scale effect on hover */
 }
 
 .trailer-thumbnail {
-  width: 100%; /* Full width of the tile */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  /* Full width of the tile */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 </style>
