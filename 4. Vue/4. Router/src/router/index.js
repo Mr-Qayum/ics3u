@@ -3,22 +3,14 @@ import HomeView from '../views/HomeView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import LoginView from '../views/LoginView.vue';
 import MoviesView from '../views/MoviesView.vue';
-import AllMoviesView from '../views/AllMoviesView.vue';
-import SingleMovieView from '../views/SingleMovieView.vue';
-
+import DetailView from '../views/DetailView.vue';
 
 const routes = [
     { path: '/', component: HomeView },
     { path: '/register', component: RegisterView },
     { path: '/login', component: LoginView },
-    {
-        path: '/movies',
-        component: MoviesView,
-        children: [
-            { path: 'all', component: AllMoviesView },
-            { path: ':id', component: SingleMovieView },
-        ]
-    },
+    { path: '/movies', component: MoviesView },
+    { path: '/movies/:id', component: DetailView },
 ]
 
 const router = createRouter({
