@@ -1,9 +1,17 @@
 <script setup>
 import { useRouter, RouterView } from 'vue-router';
 import { useStore } from '../store';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const store = useStore();
 const router = useRouter();
+
+const logout = () => {
+  store.user = null;
+  signOut(auth);
+  router.push(`/`);
+}
 </script>
 
 <template>
@@ -11,7 +19,7 @@ const router = useRouter();
     <header class="header">
       <h1>{{ `Hello ${store.user.email}!` }}</h1>
       <button @click="router.push(`/cart`)" class="logout-button">Cart</button>
-      <button @click="router.push(`/`)" class="logout-button">Logout</button>
+      <button @click="logout()" class="logout-button">Logout</button>
     </header>
     <main class="movie-container">
       <RouterView />
