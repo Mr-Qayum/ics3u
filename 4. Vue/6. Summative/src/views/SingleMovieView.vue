@@ -6,16 +6,17 @@ import { useStore } from "../store";
 const route = useRoute();
 const store = useStore();
 
+const addToCart = () => {
+  store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })
+  localStorage.setItem(`cart_${store.user.email}`, JSON.stringify(Object.fromEntries(store.cart)));
+}
+
 const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
 </script>
 
 <template>
   <div class="movie-detail">
-    <button
-      @click="store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })"
-      class="movie-site">
-      Buy
-    </button>
+    <button @click="addToCart()" class="movie-site">Buy</button>
     <h1 class="movie-title">{{ response.data.original_title }}</h1>
     <p class="movie-overview">{{ response.data.overview }}</p>
     <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
