@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class QuadraticFormula {
+    
     public static void main(String[] args) throws Exception {
         Scanner keyboard = new Scanner(System.in);
 
